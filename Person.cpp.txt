@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include "Person.h"
+using namespace std;
+
+
+Person ::Person() {
+    string n, g;
+    int a;
+    cout << "Enter your name, gender and age respectively: " << endl;
+    cin >> n >> g >> a;
+    Name = n;
+    while ((g != "Female") && (g != "Male") && (g != "female") && (g != "male")) {
+        cout << "Invalid input, Choose between female or male: " << endl;
+        cin >> g;
+    }
+    Gender = g;
+    Age = a;
+}
+int Person ::getAge() {
+    return Age;
+}
+string Person ::getGender() {
+    return Gender;
+}

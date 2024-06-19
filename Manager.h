@@ -1,0 +1,35 @@
+#pragma once
+#ifndef HOTELISMOS_PROJECT_MANAGER_H
+#define HOTELISMOS_PROJECT_MANAGER_H
+#include <iostream>
+#include "Person.h"
+using namespace std;
+
+class Manager : public Person {
+private:
+    string managerId;
+    int balance;
+    int empty_rooms;
+    int booked_rooms;
+public:
+    Manager(string Id);
+
+    void setBalance(int num);
+
+    void setEmptyRooms(int num);
+
+    void setBookedRooms(int num);
+
+    int getEmptyRooms();
+
+    int getBalance();
+
+    int getBookedRooms();
+
+    void searchGuestData();
+
+    void searchStaffData();
+
+
+};
+#endif //HOTELISMOS_PROJECT_MANAGER_H

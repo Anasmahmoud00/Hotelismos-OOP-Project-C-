@@ -1,0 +1,27 @@
+#include "Person.h"
+#include <iostream>
+#include <string>
+using namespace std;
+#include "Staff.h"
+
+
+Staff ::Staff() : Person(){
+    string p;
+    cout << "Enter your Position ( Manager - Housekeeper - Receptionist )" << endl;
+    cin >> p;
+    while((p != "Manager") && (p != "Housekeeper") && (p != "Receptionist")){
+        cout << "Invalid input, Please choose from this ( Manager - Housekeeper - Receptionist )" << endl;
+        cin >> p;
+    }
+    Position = p;
+    Email = getName() + to_string(getAge()) + "@Hotelismos.com";
+}
+void Staff ::getInformation()
+{
+    cout << "Your information is: " << "\n" << getName() << "\n" << getAge()  << "\n" << Position << "\n" << getGender() << "\n" << "Your job mail is " << Email << endl;
+}
+
+int Staff::generateRandomNumber(int min, int max) {
+    srand(time(NULL));
+    return rand() % (max - min + 1) + min;
+}
